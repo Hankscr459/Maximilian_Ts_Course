@@ -1,2 +1,8 @@
-console.log('Sending data...')
-const userName = 'Hank'
+let logged
+
+function sendAnalytics(data: string) {
+    console.log(data)
+    logged = true
+}
+
+sendAnalytics('The data')
