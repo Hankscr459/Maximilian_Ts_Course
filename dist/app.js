@@ -5,6 +5,9 @@ class Department {
         this.name = name;
         this.employees = [];
     }
+    static createEmployee(name) {
+        return { name: name };
+    }
     describe() {
         console.log(`Department:  (${this.id}): ${this.name}`);
     }
@@ -65,4 +68,6 @@ accounting.mostRecentReport = 'Year End Report';
 accounting.addReport('Something went wrong');
 console.log(accounting.mostRecentReport);
 accounting.printRreports();
+const employee1 = Department.createEmployee('andrew_hank');
+console.log(employee1);
 //# sourceMappingURL=app.js.map

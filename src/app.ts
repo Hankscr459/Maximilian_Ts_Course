@@ -6,6 +6,10 @@ class Department {
         // this.name = n
     }
 
+    static createEmployee(name: string) {
+        return { name: name }
+    }
+
     describe(this: Department) {
         console.log(`Department:  (${this.id}): ${this.name}`)
     }
@@ -87,6 +91,9 @@ accounting.mostRecentReport = 'Year End Report'
 accounting.addReport('Something went wrong')
 console.log(accounting.mostRecentReport)
 accounting.printRreports()
+
+const employee1 = Department.createEmployee('andrew_hank')
+console.log(employee1)
 
 // const accountingCopy = { name: 's', describe: accounting.describe }
 
