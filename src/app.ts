@@ -1,31 +1,22 @@
-// type AddFn = (a: number, b: number) => number 
-interface AddFn {
-    (a: number, b: number): number
-}
-
-let add: AddFn
-
-interface Named {
-    readonly name: string
-}
-interface Greetable extends Named {
+type Admin = {
     name: string
-
-    greet(phrase: string): void
+    privileges: string[]
 }
 
-class Person implements Greetable {
+type Employee = {
     name: string
-    age = 30
-    constructor(n: string) {
-        this.name = n
-    }
-    greet(phrase: string) {
-        console.log(phrase + ' ' + this.name)
-    }
+    startDate: Date
 }
 
-let user1: Greetable
-user1 = new Person('Hank')
+type ElevatedEmploee = Admin & Employee
 
-user1.greet('Hi there - I am')
+const e1 : ElevatedEmploee = {
+    name: 'Hank',
+    privileges: ['create-server'],
+    startDate: new Date()
+}
+
+type Combinable = string | number
+type Numberic = number | boolean
+
+type Universal = Combinable & Numberic
