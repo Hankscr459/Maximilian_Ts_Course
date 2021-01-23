@@ -3,7 +3,7 @@ interface AddFn {
     (a: number, b: number): number
 }
 
-let add: AddFn
+let addNum: AddFn
 
 interface Named {
     readonly name?: string
