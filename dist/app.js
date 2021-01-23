@@ -37,10 +37,26 @@ const v1 = new Car();
 const v2 = new Trunk();
 function useVehicle(vehicle) {
     vehicle.drive();
-    if ('loadCargo' in vehicle) {
+    if (vehicle instanceof Trunk) {
         vehicle.loadCargo(1000);
     }
 }
 useVehicle(v1);
 useVehicle(v2);
+function moveAnimal(animal) {
+    let speed;
+    switch (animal.type) {
+        case 'bird':
+            speed = animal.flyingSpeed;
+            break;
+        case 'horse':
+            speed = animal.runningSpeed;
+    }
+    console.log('Moving at speed: ' + speed);
+}
+moveAnimal({ type: 'bird', flyingSpeed: 10 });
+const userInputElement = document.getElementById('user-input');
+if (userInputElement) {
+    userInputElement.value = 'Hi there!';
+}
 //# sourceMappingURL=app.js.map
