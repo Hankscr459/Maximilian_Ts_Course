@@ -15,7 +15,7 @@ interface Greetable extends Named {
     greet(phrase: string): void
 }
 
-class Person implements Greetable {
+class PersonFile implements Greetable {
     name?: string
     age = 30
     constructor(n?: string) {
@@ -33,6 +33,6 @@ class Person implements Greetable {
 }
 
 let user1: Greetable
-user1 = new Person('Hank')
+user1 = new PersonFile('Hank')
 
 user1.greet('Hi there - I am')
